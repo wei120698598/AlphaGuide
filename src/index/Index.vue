@@ -1,12 +1,12 @@
 <template>
   <div style="width: 100%">
-    <div style="display: flow"
+
+    <!-- <div style="display: flow"
          v-if="isWeChat">
       <img v-bind:src="guide"
            style="width: 100%;height: -webkit-fill-available">
-    </div>
-    <div id="index"
-         v-else>
+    </div> -->
+    <div id="index">
       <img id="title"
            src="../assets/top_bg_mobile_ratio.png">
       <div class="logo_bg">
@@ -20,7 +20,10 @@
       <div class="qr_code">
         <img class="img_qr_code"
              v-bind:src="qrCode">
+        <vue-q-art :config="config"
+                   v-show="true"></vue-q-art>
       </div>
+
       <!-- <btn-guide v-if="isIOS" /> -->
 
       <div class="install"
@@ -32,6 +35,7 @@
 </template>
 <script>
 import BtnGuide from '../component/BtnGuide'
+import VueQArt from 'vue-qart'
 
 export default {
   name: 'Index',
@@ -43,10 +47,17 @@ export default {
       clientUA: 'Android',
       isIOS: false,
       isWeChat: false,
-      guide: ''
+      guide: '',
+      config: {
+        value: 'https://www.baidu.com',
+        imagePath: '../assets/0.png',
+        filter: 'color',
+        size: 500
+      },
+      downloadButton: false
     }
   },
-  components: { BtnGuide },
+  components: { BtnGuide, VueQArt },
   mounted () {
     this.checkUA()
   },
