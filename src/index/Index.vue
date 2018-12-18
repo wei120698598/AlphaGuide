@@ -21,9 +21,10 @@
         <img class="img_qr_code"
              v-bind:src="qrCode">
       </div>
-      <btn-guide v-if="isIOS" />
+      <!-- <btn-guide v-if="isIOS" /> -->
 
-      <div class="install">
+      <div class="install"
+           v-if="!isIOS">
         <a v-bind:href="downloadUrl">点击安装</a>
       </div>
     </div>
@@ -38,7 +39,7 @@ export default {
     return {
       qrCode: '',
       downloadUrl:
-        'https://www.pgyer.com/apiv2/app/install?_api_key=845b1e8faab9233cd759c6d3c9fe69ce&buildKey=432170ddf14c35a1aa75fbb7ca9b27d8',
+        'https://www.pgyer.com/apiv2/app/install?_api_key=845b1e8faab9233cd759c6d3c9fe69ce&buildKey=e14ce87c41739e0e32af75711c8a53e8',
       clientUA: 'Android',
       isIOS: false,
       isWeChat: false,
@@ -57,10 +58,10 @@ export default {
       }
       if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
         // Ios
-        this.downloadUrl = 'https://testflight.apple.com/join/2hecYXyZ'
+        this.downloadUrl = 'https://fir.im/alphaPreEnv?release_id=5c157430959d69622ade172b'
         this.qrCode = require('../assets/ios.png')
         this.clientUA = 'IOS'
-        this.isIOS = false
+        this.isIOS = true
         this.guide = require('../assets/guide.png')
       } else if (/(Android)/i.test(navigator.userAgent)) {
         //  Android终端
