@@ -65,10 +65,12 @@ export default {
         this.clientUA = 'IOS'
         this.isIOS = true
         this.guide = require('../assets/guideIos.png')
+        this.$router.push({ name: 'https://fir.im/iosinner' })
       } else if (/(Android)/i.test(navigator.userAgent)) {
         //  Android终端
         this.downloadUrl = 'https://www.pgyer.com/apiv2/app/install?_api_key=845b1e8faab9233cd759c6d3c9fe69ce&buildKey=' + ANDROID_BUILD_ID
         this.guide = require('../assets/guideAndroid.png')
+        this.$router.push({ name: 'https://www.pgyer.com/AlphaAndroidInner' })
       }
       function isWeixinBrowser () {
         return /micromessenger/.test(ua)
