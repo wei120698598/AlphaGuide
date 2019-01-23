@@ -1,6 +1,6 @@
-# guide
+# vue-demo
 
-> 内部体验引导页
+> A Vue.js project
 
 ## Build Setup
 
