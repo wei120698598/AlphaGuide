@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -26,5 +26,7 @@ npm run e2e
 # run all tests
 npm test
 ```
+
+[https://wei120698598.github.io/AlphaGuide/index/index.html](https://wei120698598.github.io/AlphaGuide/index/index.html)
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
