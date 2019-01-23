@@ -1,6 +1,12 @@
 <template>
   <div style="width: 100%">
-    <div id="index">
+    <div style="display: flow"
+         v-if="isWeChat">
+      <img v-bind:src="guide"
+           style="width: 100%;height: -webkit-fill-available">
+    </div>
+    <div id="index"
+         v-else>
       <img id="title"
            src="../assets/top_bg_mobile_ratio.png">
       <div class="logo_bg">
